@@ -23,3 +23,6 @@
     
     - name: Install k8s
       script: /home/ubuntu/CNE-Project-2/scripts/install-k8.sh
+
+    - name: Install eks
+      script: /home/ubuntu/CNE-Project/scripts/install-eksctl.sh
