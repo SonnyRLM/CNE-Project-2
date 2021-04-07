@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Deploy nginx pod') {
             steps {
-                sh ""
+                sh "kubectl apply -f kubernetes/nginx.yaml"
             }
         }
         stage('Deploy frontend pod') {
