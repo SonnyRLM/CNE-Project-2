@@ -1,6 +1,8 @@
 resource "aws_security_group" "ssh-allowed" {
   description = "Open required ports for project"
 
+  vpc_id      = var.vpc_id_sg
+
   ingress {
     from_port = 22
     to_port   = 22
