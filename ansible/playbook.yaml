@@ -1,0 +1,24 @@
+- hosts: all
+  become: true
+  tasks:
+    - name: Clone git repo
+      git:
+        repo: https://github.com/SonnyRLM/CNE-Project-2
+        dest: /home/ubuntu/CNE-Project-2
+
+
+    - name: Install misc
+      script: /home/ubuntu/CNE-Project-2/scripts/install-misc.sh
+    
+    - name: Install docker & docker-compose
+      script: /home/ubuntu/CNE-Project-2/scripts/install-docker.sh
+
+
+- hosts: jenkins-vm
+  become: true
+  tasks:
+    - name: Install Jenkins
+      script: /home/ubuntu/CNE-Project-2/scripts/install-jenkins.sh
+    
+    - name: Install k8s
+      script: /home/ubuntu/CNE-Project-2/scripts/install-k8.sh
