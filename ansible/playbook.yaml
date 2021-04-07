@@ -25,13 +25,9 @@
       script: /home/ubuntu/CNE-Project-2/scripts/install-k8.sh
 
     - name: Install eks
-<<<<<<< HEAD
-      script: /home/ubuntu/CNE-Project-2/scripts/install-eksctl.sh
+      script: /home/ubuntu/CNE-Project-2/scripts/install-k8.sh
 
     - name: Install AWSCLI
       script: /home/ubuntu/CNE-Project-2/scripts/install-aws.sh
 
     
-=======
-      script: /home/ubuntu/CNE-Project/scripts/install-eksctl.sh
->>>>>>> 57ab7afa29003f5d22f15b0a9a2656bfa1038656
