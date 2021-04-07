@@ -41,3 +41,21 @@ spec:
       - name: nginx-config
         configMap:
           name: nginx-config
+
+--- 
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+data:
+  default.conf: |
+    server {
+     listen 80;
+    location / {
+        proxy_pass http://frontend:5000/;
+    }
+    location / {
+            proxy_pass http://backend:5001/;
+        }
+    }
