@@ -5,7 +5,7 @@
       git:
         repo: https://github.com/SonnyRLM/CNE-Project-2
         dest: /home/ubuntu/CNE-Project-2
-        version: Ansible
+        version: Dev
 
 
     - name: Install misc
