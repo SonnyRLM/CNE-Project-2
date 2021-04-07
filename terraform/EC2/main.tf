@@ -11,6 +11,7 @@ resource "aws_instance" "CNE-Jenkins" {
 
   tags = {
     project = "CNE-Project-2"
+    Name = "Jenkins"
   }
 }
 
@@ -27,6 +28,7 @@ resource "aws_instance" "CNE-Testing" {
 
   tags = {
     project = "CNE-Project-2"
+    Name = "Test-VM"
   }
 
 }

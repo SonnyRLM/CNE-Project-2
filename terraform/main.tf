@@ -9,8 +9,7 @@ module "aws_vpc" {
 
 module "security_group" {
   source = "./SG"
-  name = "WebServerSG"
-  vpc_id_sg = module.aws_vpc.public_subnetA_id
+  vpc_id_sg = module.aws_vpc.vpc-id
 }
 
 module "ec2_instances" {

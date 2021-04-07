@@ -11,7 +11,7 @@ resource "aws_db_instance" "dev" {
   db_subnet_group_name = aws_db_subnet_group.default.name
   vpc_security_group_ids = var.vpc_security_group_ids
   skip_final_snapshot = true
-  identifier = "CNE-Project-2-db-dev"
+  identifier = "cne-project-db-dev"
 
   tags = {
     project = "CNE-Project-2"
@@ -31,7 +31,7 @@ resource "aws_db_instance" "prod" {
   db_subnet_group_name = aws_db_subnet_group.default.name
   vpc_security_group_ids = var.vpc_security_group_ids
   skip_final_snapshot = true
-  identifier = "CNE-Project-2-db-prod"
+  identifier = "cne-project-db-prod"
 
   tags = {
     project = "CNE-Project-2"
