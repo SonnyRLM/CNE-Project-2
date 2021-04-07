@@ -1,5 +1,10 @@
 #!/bin/bash
-
 sudo apt update
-sudo apt install -y mysql-clien
+
+#For installing requirements.txt with docker
+sudo apt install -y python3-pip
+
+sudo apt install -y mysql-client
+
+#For running tests on application
 sudo apt install -y python-pytest
