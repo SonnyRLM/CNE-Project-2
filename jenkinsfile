@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Provision EKS if required') {
             steps {
-                sh "bash eks-setup.sh"
+                sh "bash scripts/eks-setup.sh"
             }
         }
         stage('Deploy nginx pod') {
