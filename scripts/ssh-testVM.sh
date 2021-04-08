@@ -1,10 +1,12 @@
 ssh -i ~/.ssh/TerraformPair.pem ubuntu@18.134.198.195 << EOF 
 
+sudo rm -r CNE-Project-2
+
 git clone https://github.com/SonnyRLM/CNE-Project-2
 
-git checkout Dev
-
 cd CNE-Project-2
+
+git checkout Dev
 
 docker-compose up -d --build
 
