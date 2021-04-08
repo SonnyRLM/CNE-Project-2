@@ -54,7 +54,4 @@ data:
     location / {
         proxy_pass http://frontend:5000/;
     }
-    location /backend {
-            proxy_pass http://backend:5001/;
-        }
     }
