@@ -18,4 +18,4 @@ services:
       published: 5001
       protocol: tcp
     environment:
-      TEST_DATABASE_URI: mysql+pymysql://admin:password@cne-project-db-dev.cisxnnla1kct.eu-west-2.rds.amazonaws.com:3306/users
+      TEST_DATABASE_URI: mysql+pymysql://admin:password@cne-project-db-dev.cisxnnla1kct.eu-west-2.rds.amazonaws.com:3306/testdb
