@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Build and push docker images'){
             steps{
-                sh "bash script/docker-build-push.sh"
+                sh "bash scripts/docker-build-push.sh"
             }
         }
 
