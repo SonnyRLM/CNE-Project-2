@@ -1,5 +1,5 @@
 #! /bin/bash
-kubectl apply -f namespace.yaml
+kubectl apply -f kubernetes/namespace.yaml
 
 kubectl apply -f kubernetes/nginx-config.yaml
 
