@@ -3,8 +3,9 @@ kind: Deployment
 metadata:
   name: nginx
   namespace: cne
-  labels: 
-    app: flask-app2
+  labels:
+    app: nginx
+
 spec:
   replicas: 3
   selector:
@@ -27,4 +28,3 @@ spec:
       - name: nginx-config
         configMap:
           name: nginx-config
-

@@ -2,11 +2,12 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: nginx-config
+  namespace: cne
 data:
-  default.conf: |
+  default.conf:
     server {
-      listen 80;
-      location / {
-        proxy_pass http://flask-app:5000;
-      }
+        listen 80;
+        location / {
+            proxy_pass http://flask-app:5000;
+        }
     }
