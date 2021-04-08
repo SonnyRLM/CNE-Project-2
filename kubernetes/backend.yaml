@@ -1,10 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend
+  name: flask-backend-service
+  namespace: cne
+  labels:
+    app : flask-app
 spec:
   selector:
-    app: backend
+    app: flask-backend-service
   ports: 
   - protocol: TCP
     port: 5001
@@ -16,15 +19,19 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend
+  name: flask-backend-deploy
+  namespace: cne
+  labels:
+    app: flask-app
 spec:
+  replicas: 3
   selector:
     matchLabels:
-      app: backend
+      app: flask-backend-service
   template:
     metadata:
       labels:
-        app: backend
+        app: flask-backend-service
     spec:
       containers:
       - name: backend
@@ -33,6 +40,6 @@ spec:
         - containerPort: 5001
         env:
         - name: DATABASE_URI
-          value: mysql+pymysql://admin:password@cne-project-db-prod.cisxnnla1kct.eu-west-2.rds.amazonaws.com:3306/cne-project-db-prod
+          value: mysql+pymysql://admin:password@cne-project-db-prod.cisxnnla1kct.eu-west-2.rds.amazonaws.com:3306/users
         - name: SECRET_KEY
           value: dasfrgasfgvsadgsfvsdhdshnbrgtsb
