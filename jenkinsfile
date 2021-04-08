@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+    environment {
+        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+        AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
+    }
+    stages {
+        stage('Testing Application'){
+            steps{
+                sh "bash scripts/ssh-testVM.sh"
+            }
+        }
+        stage('Build and push docker images'){
+            steps{
+                sh "bash scripts/docker-build-push.sh"
+            }
+        }
+
+        stage('Install And Configure AWS-CLI') {
+            steps {
+                sh "bash scripts/install-aws.sh"
+            }
+        }
+        stage('Provision EKS if required') {
+            steps {
+                sh "bash scripts/eks-setup.sh"
+            }
+        }
+        stage('Deploy all kubernetes resources') {
+            steps {
+                sh "bash kubernetes/deploy-all.sh"
+            }
+        }
+    }
+}

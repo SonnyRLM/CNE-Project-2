@@ -1,13 +1,6 @@
 - hosts: all
   become: true
   tasks:
-    - name: Clone git repo
-      git:
-        repo: https://github.com/SonnyRLM/CNE-Project-2
-        dest: /home/ubuntu/CNE-Project-2
-        version: Ansible
-
-
     - name: Install misc
       script: /home/ubuntu/CNE-Project-2/scripts/install-misc.sh
     
@@ -23,3 +16,11 @@
     
     - name: Install k8s
       script: /home/ubuntu/CNE-Project-2/scripts/install-k8.sh
+
+    - name: Install eks
+      script: /home/ubuntu/CNE-Project-2/scripts/install-k8.sh
+
+    - name: Install AWSCLI
+      script: /home/ubuntu/CNE-Project-2/scripts/install-aws.sh
+
+    

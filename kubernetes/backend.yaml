@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-backend-deploy
+  namespace: cne
+  labels:
+    app: flask-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flask-backend-service
+  template:
+    metadata:
+      labels:
+        app: flask-backend-service
+    spec:
+      containers:
+      - name: backend
+        image: sonnyrlm/backend
+        ports:
+        - containerPort: 5001
+        env:
+        - name: DATABASE_URI
+          value: mysql+pymysql://admin:password@cne-project-db-prod.cisxnnla1kct.eu-west-2.rds.amazonaws.com:3306/users
+        - name: SECRET_KEY
+          value: dasfrgasfgvsadgsfvsdhdshnbrgtsb

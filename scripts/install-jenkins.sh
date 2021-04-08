@@ -1,5 +1,7 @@
 #!/bin/bash
 
+if (( ! -d "/home/jenkins" )); then 
+
 if type apt > /dev/null; then
     pkg_mgr=apt
     java="openjdk-8-jre"
@@ -55,3 +57,4 @@ until [[ -n "\$(cat  .jenkins/secrets/initialAdminPassword)" ]]; do
 done
 echo "initial admin password: \$(cat .jenkins/secrets/initialAdminPassword)"
 EOF
+fi
