@@ -31,3 +31,8 @@ spec:
         image: sonnyrlm/frontend
         ports:
         - containerPort: 5000
+        env:
+        - name: DATABASE_URI
+          value: mysql+pymysql://admin:password@cne-project-db-prod.cisxnnla1kct.eu-west-2.rds.amazonaws.com:3306/cne-project-db-prod
+        - name: SECRET_KEY
+          value: dasfrgasfgvsadgsfvsdhdshnbrgtsb
