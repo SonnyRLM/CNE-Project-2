@@ -15,19 +15,9 @@ pipeline {
                 sh "bash scripts/eks-setup.sh"
             }
         }
-        stage('Deploy nginx pod') {
+        stage('Deploy all kubernetes resources') {
             steps {
-                sh "kubectl apply -f kubernetes/nginx.yaml"
-            }
-        }
-        stage('Deploy frontend pod') {
-            steps {
-                sh "kubectl apply -f kubernetes/frontend.yaml"
-            }
-        }
-        stage('Deploy backend pod') {
-            steps {
-                sh "kubectl apply -f kubernetes/backend.yaml"
+                sh "bash kubernetes/deploy-all.sh"
             }
         }
     }
