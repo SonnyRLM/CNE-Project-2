@@ -1,7 +1,7 @@
 all:
     hosts:
-        52.56.146.71:
-        35.176.187.187:
+        18.133.181.216:
+        18.134.198.195:
     vars:
         ansible_user: ubuntu
         ansible_ssh_private_key_file: '~/.ssh/TerraformPair.pem'
@@ -9,14 +9,14 @@ all:
 
 jenkins-vm:
     hosts:
-        52.56.146.71:
+        18.133.181.216:
     vars:
         ansible_user: ubuntu
         ansible_ssh_private_key_file: '~/.ssh/TerraformPair.pem'
 
 test-vm:
     hosts:
-        35.176.187.187:
+        18.134.198.195:
     vars:
         ansible_user: ubuntu
         ansible_ssh_private_key_file: '~/.ssh/TerraformPair.pem'
