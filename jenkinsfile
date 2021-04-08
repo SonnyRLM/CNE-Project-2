@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Testing Application'){
             steps{
-                sh "bash scripts/ssh-pytestVM.sh"
+                sh "bash scripts/ssh-testVM.sh"
             }
         }
         stage('Build and push docker images'){
