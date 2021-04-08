@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  frontend:
+    build: ./frontend
+    image: sonnyrlm/frontend:latest
+    container_name: frontend
+    ports:
+    - target: 5000
+      published: 5000
+      protocol: tcp
+
+  backend:
+    build: ./backend
+    image: sonnyrlm/backend:latest
+    container_name: backend
+    ports:
+    - target: 5001
+      published: 5001
+      protocol: tcp
+    environment:
+      TEST_DATABASE_URI: ${TEST_DATABASE_URI}

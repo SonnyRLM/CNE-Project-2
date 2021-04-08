@@ -5,6 +5,17 @@ pipeline {
         AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
     }
     stages {
+        stage('Testing Application'){
+            steps{
+                sh "bash scripts/ssh-pytestVM.sh"
+            }
+        }
+        stage('Build and push docker images'){
+            steps{
+                sh "bash script/docker-build-push.sh"
+            }
+        }
+
         stage('Install And Configure AWS-CLI') {
             steps {
                 sh "bash scripts/install-aws.sh"
