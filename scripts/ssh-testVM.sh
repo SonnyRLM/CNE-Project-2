@@ -9,6 +9,7 @@ cd CNE-Project-2
 git checkout Dev
 
 mysql -h cne-project-db-prod.cisxnnla1kct.eu-west-2.rds.amazonaws.com -P 3306 -u admin -ppassword < database/Create.sql
+mysql -h cne-project-db-dev.cisxnnla1kct.eu-west-2.rds.amazonaws.com -P 3306 -u admin -ppassword < database/Create.sql
 
 docker-compose up -d --build
 
