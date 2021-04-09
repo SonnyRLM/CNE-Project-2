@@ -42,6 +42,19 @@ The Jenkins CI server is responsible for keeping the application up to date by l
 
 After testing the application the Jenkins VM will attempt to create an EKS cluster if there is not already one existing for the given application. After this the Jenkins VM uses Kubernetes to deploy the three pods (Frontend, Backend, NGINX) over the three nodes inside the EKS Cluster.
 
+## Risk Assessment
+
+Below is my risk assessment:
+
+![risk-assess](images/risk-assessment.png)
+
+## Jira Board
+
+Below is a screenshot of my Jira board. All tasks for this project were included in a single sprint:
+
+![jira1](images/jira1.png)
+![jira2](images/jira2.png)
+
 
 ## Testing
 
