@@ -4,7 +4,7 @@ metadata:
   name: nginx-config
   namespace: cne
 data:
-  default.conf:
+  nginx.conf: |
     server {
         listen 80;
         location / {
